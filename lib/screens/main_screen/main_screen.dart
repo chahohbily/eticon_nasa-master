@@ -79,13 +79,13 @@ class _MainScreenState extends State<MainScreen> {
                     children: [
                       SizedBox(height: 15,),
                       Container(
-                        height: 145,
+                        height: 95,
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             CircleAvatar(
                               backgroundImage: Image.network(state.result.photos[index].imgSrc).image,
-                              maxRadius: 120,
+                              maxRadius: 79,
                             ),
                             Text(state.result.photos[index].camera.name),
                             SizedBox(width: 5,),
