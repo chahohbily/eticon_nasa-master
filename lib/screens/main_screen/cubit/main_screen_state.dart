@@ -5,7 +5,7 @@ abstract class MainScreenState {}
 class MainScreenLoading extends MainScreenState {}
 
 class MainScreenLoaded extends MainScreenState {
-  final ApodModel result;
+  final List<ApodModel> result;
   MainScreenLoaded({required this.result});
 }
 
