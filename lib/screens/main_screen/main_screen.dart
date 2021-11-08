@@ -69,8 +69,8 @@ class _MainScreenState extends State<MainScreen> {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
-                          apodModel = state.result;
-                          return DetailScreen(apodModel: apodModel, index: index,);
+                          apodModel = state.result[index];
+                          return DetailScreen(apodModel: apodModel);
                         }
                     )
                     );
@@ -83,13 +83,16 @@ class _MainScreenState extends State<MainScreen> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            CircleAvatar(
-                              backgroundImage: Image.network(state.result.photos[index].imgSrc).image,
-                              maxRadius: 79,
+                            Hero(
+                              tag: state.result[index].id!.toString(),
+                              child: CircleAvatar(
+                                backgroundImage: Image.network(state.result[index].imgSrc!).image,
+                                radius: 79,
+                              ),
                             ),
-                            Text(state.result.photos[index].camera.name),
+                            Text(state.result[index].camera!.name!),
                             SizedBox(width: 5,),
-                            Text(state.result.photos[index].id.toString()),
+                            Text(state.result[index].id.toString()),
                           ],
                         ),
                       ),
